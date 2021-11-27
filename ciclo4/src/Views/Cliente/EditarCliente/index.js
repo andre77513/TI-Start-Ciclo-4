@@ -92,6 +92,10 @@ export const EditarCliente = (props) => {
                                     <Label >Cidade</Label>
                                     <Input type="text" name="cidade" placeholder="Cidade" value={cidade} onChange={e => setCidade(e.target.value)} />
                                 </FormGroup>
+                                <FormGroup className="p-2">
+                                     <Label>Endereço</Label>
+                                     <Input type="text" name="endereco" placeholder="Endereço" value={endereco} onChange={e => setEndereco(e.target.value)} />
+                                </FormGroup>
                             </Col>
                             <Col md={1}>
                                 <FormGroup className="p-2">
