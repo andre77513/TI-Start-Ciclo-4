@@ -83,7 +83,7 @@ app.get('/cliente/:id', async (req, res) => {
         });
 });
 
-app.put('/cliente/:id', async (req, res) => {
+app.put('/editar-cliente/:id', async (req, res) => {
     const cli = {
         id: req.params.id,
         ClienteId: req.body.cliente,
@@ -96,15 +96,14 @@ app.put('/cliente/:id', async (req, res) => {
         clienteDesde: req.body.clienteDesde,
 
     };
-    if (!await cliente.findByPk(req.body.ClienteId)) {
+    if (!await cliente.findByPk(req.params.id)) {
         return res.status(404).json({
             error: true,
             message: "Cliente não existe."
         });
     };
     await cliente.update(cli, {
-        where: Sequelize.and({ ClienteId: req.body.ClienteId },
-            { id: req.params.id })
+        where: { id: req.params.id }
     }).then(cliente => {
         return res.json({
             error: false,
