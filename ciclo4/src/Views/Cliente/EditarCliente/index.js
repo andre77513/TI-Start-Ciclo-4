@@ -25,7 +25,7 @@ export const EditarCliente = (props) => {
             'Content-Type': 'application/json'
         };
 
-        await axios.put(api + "/cliente/" + id, { id, nome, endereco, cidade, uf, nascimento, clienteDesde }, { headers })
+        await axios.put(api + "/editar-cliente/" + id, { id, nome, endereco, cidade, uf, nascimento, clienteDesde }, { headers })
             .then((response) => {
                 setStatus({
                     type: 'success',
