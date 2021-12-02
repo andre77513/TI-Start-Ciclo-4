@@ -81,7 +81,7 @@ export const EditarPedido = (props) => {
                         <Label >Id do Cliente</Label>
                         <Input type="text" name="clienteId" placeholder="Id do cliente" defaultValue={ClienteId}/>
                     </FormGroup>
-                    <Button type="submit" outline color="warning" >Salvar</Button>
+                    <Button type="submit" outline color="warning" className="m-1">Salvar</Button>
                     <Button type="reset" outline color="primary" >Limpar</Button>
                 </Form>
             </Container>
